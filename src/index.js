@@ -8,8 +8,8 @@ import InputExample from './components/InputExample';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <InputExample />
+    <App />
+    {/* <InputExample /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
