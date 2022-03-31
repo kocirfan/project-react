@@ -1,13 +1,58 @@
 
 import './App.css';
-import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import User from './components/User';
-import Counter from './components/Counter';
-import Users from './components/Users';
+// import { useState, useEffect } from 'react';
+// import Header from './components/Header';
+// import User from './components/User';
+// import Counter from './components/Counter';
+//import Users from './components/Users';
+import {BrowserRouter as Router,  Switch, Route, NavLink} from "react-router-dom";
+import Home from "./route_components/Home";
+import About from "./route_components/About";
+import Users from "./route_components/Users";
+import Error404 from "./route_components/Error404";
 
 
-// function App() {
+
+//* Routes**
+
+function App(){
+  return (
+  <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/" exact activeClassName='active'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName='active'>about</NavLink>
+          </li>
+          <li>
+            <NavLink to="/users" activeClassName='active'>Users</NavLink>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/about" component={About}/>
+          <Route path="/users" component={Users}/>
+          <Route path="*" component={Error404}/>
+          
+      </Switch>
+    </div>
+  </Router>
+  );
+  
+}
+
+export default App;
+
+
+
+
+
+/* //// function App() {
 //   return (
 //     <div>
 //       <h1>Burası App</h1>
@@ -85,23 +130,23 @@ import Users from './components/Users';
 // export default App;
 
 // Lifecycle ***useEffect****
-function App(){
+// function App(){
  
-// const [isVisible, setIsVisible] = useState(true);
-  // useEffect(()=>{
-  //   console.log('State güncellendi');
-  // });
+// // const [isVisible, setIsVisible] = useState(true);
+//   // useEffect(()=>{
+//   //   console.log('State güncellendi');
+//   // });
 
-  return(
-  //  <div className='App'>
-  //    {isVisible && <Counter />}
+//   return(
+//   //  <div className='App'>
+//   //    {isVisible && <Counter />}
 
-  //   <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
-  //  </div>
-    <div className='App'>
-        <Users />
-    </div>
-  )
-}
-export default App;
+//   //   <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+//   //  </div>
+//     <div className='App'>
+//         <Users />
+//     </div>
+//   )
+// }
+// export default App;
 
