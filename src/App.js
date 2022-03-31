@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import User from './components/User';
 import Counter from './components/Counter';
+import Users from './components/Users';
 
 
 // function App() {
@@ -86,17 +87,20 @@ import Counter from './components/Counter';
 // Lifecycle ***useEffect****
 function App(){
  
-const [isVisible, setIsVisible] = useState(true);
+// const [isVisible, setIsVisible] = useState(true);
   // useEffect(()=>{
   //   console.log('State güncellendi');
   // });
 
   return(
-   <div className='App'>
-     {isVisible && <Counter />}
+  //  <div className='App'>
+  //    {isVisible && <Counter />}
 
-    <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
-   </div>
+  //   <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+  //  </div>
+    <div className='App'>
+        <Users />
+    </div>
   )
 }
 export default App;
