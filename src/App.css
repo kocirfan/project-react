@@ -1,35 +1,37 @@
 .App {
-
   text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  color: aliceblue;
+  /* background-color: #282c34; */
+   /* min-height: 100vh; */
+  color: black;
 }
-.active{
+label{
+  display: block;
+}
+.error{
+  color: red;
+}
+/* .active {
   background-color: black;
   color: white;
   padding: 1px;
   border-radius: 15%;
   display: inline-block;
-  
 }
-.active:hover{
+.active:hover {
   background-color: tomato;
 }
-a{
+a {
   text-decoration: none;
 }
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #3498db;
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
   text-align: right;
-  
-}
-
+} */
 
 /* .App-logo {
   height: 40vmin;

@@ -1,56 +1,61 @@
-
-import './App.css';
+import "./App.css";
+import React from "react";
+import Signup from "./components/Signup";
 // import { useState, useEffect } from 'react';
 // import Header from './components/Header';
 // import User from './components/User';
 // import Counter from './components/Counter';
 //import Users from './components/Users';
-import {BrowserRouter as Router,  Switch, Route, NavLink} from "react-router-dom";
-import Home from "./route_components/Home";
-import About from "./route_components/About";
-import Users from "./route_components/Users";
-import Error404 from "./route_components/Error404";
+// import {BrowserRouter as Router,  Switch, Route, NavLink} from "react-router-dom";
+// import Home from "./route_components/Home";
+// import About from "./route_components/About";
+// import Users from "./route_components/Users";
+// import Error404 from "./route_components/Error404";
 
-
+function App() {
+  return (
+    <div className="App">
+      
+      <Signup />
+    </div>
+  );
+}
+export default App;
 
 //* Routes**
 
-function App(){
-  return (
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/" exact activeClassName='active'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" activeClassName='active'>about</NavLink>
-          </li>
-          <li>
-            <NavLink to="/users" activeClassName='active'>Users</NavLink>
-          </li>
-        </ul>
-      </nav>
+// function App(){
+//   return (
+//   <Router>
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <NavLink to="/" exact activeClassName='active'>Home</NavLink>
+//           </li>
+//           <li>
+//             <NavLink to="/about" activeClassName='active'>about</NavLink>
+//           </li>
+//           <li>
+//             <NavLink to="/users" activeClassName='active'>Users</NavLink>
+//           </li>
+//         </ul>
+//       </nav>
 
-      <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/users" component={Users}/>
-          <Route path="*" component={Error404}/>
-          
-      </Switch>
-    </div>
-  </Router>
-  );
-  
-}
+//       <Switch>
+//           <Route path="/" exact component={Home}/>
+//           <Route path="/about" component={About}/>
+//           <Route path="/users" component={Users}/>
+//           <Route path="*" component={Error404}/>
 
-export default App;
+//       </Switch>
+//     </div>
+//   </Router>
+//   );
 
+// }
 
-
-
+// export default App;
 
 /* //// function App() {
 //   return (
@@ -131,7 +136,7 @@ export default App;
 
 // Lifecycle ***useEffect****
 // function App(){
- 
+
 // // const [isVisible, setIsVisible] = useState(true);
 //   // useEffect(()=>{
 //   //   console.log('State güncellendi');
@@ -149,4 +154,3 @@ export default App;
 //   )
 // }
 // export default App;
-
