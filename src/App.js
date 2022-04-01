@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
-import Signup from "./components/Signup";
-// import { useState, useEffect } from 'react';
+
+ 
 // import Header from './components/Header';
 // import User from './components/User';
 // import Counter from './components/Counter';
@@ -11,17 +11,82 @@ import Signup from "./components/Signup";
 // import About from "./route_components/About";
 // import Users from "./route_components/Users";
 // import Error404 from "./route_components/Error404";
+//import Signup from "./components/Signup";
+import { useState, useMemo, useCallback } from 'react';
+import Header from "./Memoization/Header";
 
-function App() {
+
+// MEMOİZATİON 
+
+
+ function App() {
+  const [number, setNumber] = useState(0);
+
+  //***useCallback */
+  const increment = useCallback(()=>{
+    setNumber((prevState) => prevState + 1);
+  }, []);
   return (
     <div className="App">
+      <Header increment={increment} />
+      <hr/>
+      <h1>{number}</h1>
       
-      <Signup />
+
     </div>
-  );
+  )
 }
 export default App;
 
+
+//--------------------------------------------------
+// ********* react.memo / usememo ***********
+// function App() {
+//   const [number, setNumber] = useState(0);
+
+   // react.memo / usememo
+//   const data = useMemo(() =>{
+//     return calculeObject(number)
+//   }, [number]);
+
+//   return (
+//     <div className="App">
+//       <Header data={data}/>
+
+//       <hr/>
+//       <h1>{number}</h1>
+//       <button onClick={() => setNumber(number +1)}>Click</button>
+
+//       <br></br>
+//       <br></br>
+
+//     </div>
+
+//   )
+// }
+
+// export default App;
+
+// function calculeObject(number){
+//   console.log('calculating...');
+//   for(let i=0; i<10000; i++){}
+//   console.log('calculated');
+//   return {name: "irfan", number};
+  
+// }
+// --------------------------------------------------
+
+// Formik yup ve validation kontrol 
+// function App() {
+//   return (
+//     <div className="App">
+      
+//       <Signup />
+//     </div>
+//   );
+// }
+// export default App;
+// ----------------------------------------------------
 //* Routes**
 
 // function App(){
@@ -56,6 +121,7 @@ export default App;
 // }
 
 // export default App;
+//-------------------------------------------------------------
 
 /* //// function App() {
 //   return (
