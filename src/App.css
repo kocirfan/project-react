@@ -1,8 +1,13 @@
-.App {
+.app {
   text-align: center;
-  /* background-color: #282c34; */
-   /* min-height: 100vh; */
-  color: black;
+   
+   height: 100vh; 
+  
+}
+
+.app.dark{
+  background-color: #282c34; 
+  color: rgb(245, 241, 241);
 }
 label{
   display: block;

@@ -12,31 +12,78 @@ import React from "react";
 // import Users from "./route_components/Users";
 // import Error404 from "./route_components/Error404";
 //import Signup from "./components/Signup";
-import { useState, useMemo, useCallback } from 'react';
-import Header from "./Memoization/Header";
+//import { useState, useMemo, useCallback } from 'react';
+//import Header from "./Memoization/Header";
+import {ThemeProvider} from "./context/ThemeContext";
+import {UserProvider} from "./context/UserContext";
+
+import Container from "./componentContext/Container";
+
+// *** Context*** 
 
 
-// MEMOİZATİON 
-
-
- function App() {
-  const [number, setNumber] = useState(0);
-
-  //***useCallback */
-  const increment = useCallback(()=>{
-    setNumber((prevState) => prevState + 1);
-  }, []);
-  return (
-    <div className="App">
-      <Header increment={increment} />
-      <hr/>
-      <h1>{number}</h1>
-      
-
-    </div>
-  )
+function App(){
+  return  (
+    <ThemeProvider>
+      <UserProvider>
+        <Container />
+      </UserProvider>
+    </ThemeProvider>
+  );
+    
+     
 }
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------
+// MEMOİZATİON 
+
+//  //***useCallback */
+//  function App() {
+//   const [number, setNumber] = useState(0);
+
+//   //***useCallback */
+//   const increment = useCallback(()=>{
+//     setNumber((prevState) => prevState + 1);
+//   }, []);
+//   return (
+//     <div className="App">
+//       <Header increment={increment} />
+//       <hr/>
+//       <h1>{number}</h1>
+      
+
+//     </div>
+//   )
+// }
+// export default App;
 
 
 //--------------------------------------------------
